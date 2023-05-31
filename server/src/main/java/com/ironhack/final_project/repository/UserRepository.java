@@ -1,10 +1,11 @@
 package com.ironhack.final_project.repository;
 
-import com.ironhack.final_project.model.Coffee;
+import com.ironhack.final_project.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CoffeeRepository extends JpaRepository<Coffee, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
+    User findByUsername(String username);
 }

@@ -1,13 +1,13 @@
 package com.ironhack.final_project.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Entity
 @DynamicUpdate
@@ -24,9 +24,10 @@ public class User {
     private String bio;
     private String password;
 
-//    @OneToMany(fetch = EAGER)
-//    private Collection<Coffee> coffeeList = new ArrayList<>();
-//    @ManyToMany(fetch = EAGER)
-//    private Collection<Coffee> favList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.MERGE)
+    private Collection<Coffee> coffeeList = new ArrayList<>();
+    @ManyToMany(cascade = CascadeType.MERGE)
+    private Collection<Coffee> favList = new ArrayList<>();
+
 
 }

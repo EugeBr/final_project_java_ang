@@ -1,4 +1,7 @@
 package com.ironhack.final_project.model.enums;
 
-public enum Type {
+public enum Category {
+
+    HOT,
+    COLD
 }
