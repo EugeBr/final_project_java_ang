@@ -13,7 +13,7 @@ public class FinalProjectApplication {
 		SpringApplication.run(FinalProjectApplication.class, args);
 
 		try {
-			// Connect to your database
+			// Connect to database
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coffee_project", "root", "ironhack");
 
 			// Create a statement
