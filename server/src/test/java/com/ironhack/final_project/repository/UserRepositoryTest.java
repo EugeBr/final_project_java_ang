@@ -24,7 +24,7 @@ class UserRepositoryTest {
     @BeforeEach
     public void setUp() {
 
-        User userTest = new User(null, "userTest", null, "bio", "password", null, null);
+        User userTest = new User("userTest", "bio", "password");
         userRepository.save(userTest);
     }
 

@@ -5,10 +5,12 @@ import com.ironhack.final_project.repository.CoffeeRepository;
 import com.ironhack.final_project.service.interfaces.ICoffeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
+@Service
 public class CoffeeService implements ICoffeeService {
 
     @Autowired
@@ -16,8 +18,9 @@ public class CoffeeService implements ICoffeeService {
 
     @Override
     public void saveCoffee(Coffee coffee) {
-        Optional<Coffee> coffeeOptional = coffeeRepository.findById(coffee.getId());
+        Optional<Coffee> coffeeOptional = coffeeRepository.findByName(coffee.getName());
         if(coffeeOptional.isPresent()) throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Coffee already exists");
+        coffeeRepository.save(coffee);
     }
 
     @Override

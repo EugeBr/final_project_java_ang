@@ -45,7 +45,7 @@ class CoffeeRepositoryTest {
             e.printStackTrace();
         }
 
-        User userTest = new User(null, "userTest", null, "bio", "password", null, null);
+        User userTest = new User("userTest", "bio", "password");
         userRepository.save(userTest);
 
         List<String> instructions1 = new ArrayList<>();
@@ -60,7 +60,6 @@ class CoffeeRepositoryTest {
         steps1.add("Fill glass with ice, pour Kahlúa in, then milk. Top with a dollop of whipped coffee.");
 
         Coffee coffeeTest = new Coffee(
-                null,
                 "Boozy Whipped Coffee",
                 COLD,
                 "https://res.cloudinary.com/drrxks8d9/image/upload/v1685267552/Coffee/BackgroundEraser_20230528_115049487_xej40c.png",

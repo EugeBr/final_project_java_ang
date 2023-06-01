@@ -52,11 +52,11 @@ public class UserController implements IUserController {
         userService.deleteUser(id);
     }
 
-    @GetMapping("/users/{id}/coffees")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Coffee> getAllCoffeesByUserId(@PathVariable Integer id) {
-        return userService.getAllCoffeesByUserId(id);
-    }
+//    @GetMapping("/users/{id}/coffees")
+//    @ResponseStatus(HttpStatus.OK)
+//    public List<Coffee> getAllCoffeesByUserId(@PathVariable Integer id) {
+//        return userService.getAllCoffeesByUserId(id);
+//    }
 }
 
 

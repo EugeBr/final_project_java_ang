@@ -27,7 +27,7 @@ public class PopulateDBTest {
         userRepository.deleteAll();
         coffeeRepository.deleteAll();
 
-        User user1 = new User(null, "user1", null, "bio", "password", null, null);
+        User user1 = new User("user1", "bio", "password");
         userRepository.save(user1);
 
         List<String> instructions1 = new ArrayList<>();
@@ -42,7 +42,6 @@ public class PopulateDBTest {
         steps1.add("Fill glass with ice, pour Kahlúa in, then milk. Top with a dollop of whipped coffee.");
 
         Coffee coffee1 = new Coffee(
-                null,
                 "Boozy Whipped Coffee",
                 COLD,
                 "https://res.cloudinary.com/drrxks8d9/image/upload/v1685267552/Coffee/BackgroundEraser_20230528_115049487_xej40c.png",

@@ -12,25 +12,25 @@ public class FinalProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FinalProjectApplication.class, args);
 
-		try {
-			// Connect to database
-			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coffee_project", "root", "ironhack");
-
-			// Create a statement
-			Statement statement = connection.createStatement();
-
-			// Change the VARCHAR length
-			String modDesc = "ALTER TABLE coffee MODIFY COLUMN description VARCHAR(1000)";
-			String modNotes = "ALTER TABLE coffee MODIFY COLUMN notes VARCHAR(1000)";
-			statement.executeUpdate(modDesc);
-			statement.executeUpdate(modNotes);
-
-			// Close the statement and connection
-			statement.close();
-			connection.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			// Connect to database
+//			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coffee_project", "root", "ironhack");
+//
+//			// Create a statement
+//			Statement statement = connection.createStatement();
+//
+//			// Change the VARCHAR length
+//			String modDesc = "ALTER TABLE coffee MODIFY COLUMN description VARCHAR(1000)";
+//			String modNotes = "ALTER TABLE coffee MODIFY COLUMN notes VARCHAR(1000)";
+//			statement.executeUpdate(modDesc);
+//			statement.executeUpdate(modNotes);
+//
+//			// Close the statement and connection
+//			statement.close();
+//			connection.close();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 
 }

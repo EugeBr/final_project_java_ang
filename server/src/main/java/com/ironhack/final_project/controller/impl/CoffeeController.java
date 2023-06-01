@@ -4,7 +4,6 @@ import com.ironhack.final_project.controller.interfaces.ICoffeeController;
 import com.ironhack.final_project.model.Coffee;
 import com.ironhack.final_project.repository.CoffeeRepository;
 import com.ironhack.final_project.service.impl.CoffeeService;
-import com.ironhack.final_project.service.interfaces.ICoffeeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,7 @@ public class CoffeeController implements ICoffeeController {
     CoffeeRepository coffeeRepository;
 
     @Autowired
-    ICoffeeService coffeeService;
+    CoffeeService coffeeService;
 
     @GetMapping("/coffees")
     @ResponseStatus(HttpStatus.OK)
@@ -52,9 +51,9 @@ public class CoffeeController implements ICoffeeController {
         coffeeService.deleteCoffee(id);
     }
 
-    @GetMapping("/coffees/search?q={param}")
+    @GetMapping("/coffees/search")
     @ResponseStatus(HttpStatus.OK)
-    public List<Coffee> getAllCoffeesParam(@PathVariable String param) {
-        return coffeeRepository.findAllByNameContaining(param);
+    public List<Coffee> getAllCoffeesParam(@RequestParam (value = "q") String q) {
+        return coffeeRepository.findAllByNameContaining(q);
     }
 }

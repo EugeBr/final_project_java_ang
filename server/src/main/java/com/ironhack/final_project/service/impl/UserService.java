@@ -7,11 +7,13 @@ import com.ironhack.final_project.repository.UserRepository;
 import com.ironhack.final_project.service.interfaces.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService implements IUserService {
 
     @Autowired
@@ -50,12 +52,12 @@ public class UserService implements IUserService {
         userRepository.deleteById(id);
     }
 
-    @Override
-    public List<Coffee> getAllCoffeesByUserId(Integer id) {
-        Optional<User> UserOptional = userRepository.findById(id);
-        if (UserOptional.isEmpty())
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User " + id + " not found");
-        return coffeeRepository.findAllByCreatedBy(id);
-    }
+//    @Override
+//    public List<Coffee> getAllCoffeesByUserId(Integer id) {
+//        Optional<User> UserOptional = userRepository.findById(id);
+//        if (UserOptional.isEmpty())
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User " + id + " not found");
+//        return coffeeRepository.findAllByCreatedBy(id);
+//    }
 
 }
