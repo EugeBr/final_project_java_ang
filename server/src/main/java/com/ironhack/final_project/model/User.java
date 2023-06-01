@@ -23,11 +23,9 @@ public class User {
     private String profilePicture = "https://res.cloudinary.com/drrxks8d9/image/upload/v1685526907/Coffee/coffee-cup_q3izzc.png";
     private String bio;
     private String password;
-
-    @OneToMany(cascade = CascadeType.MERGE)
-    private Collection<Coffee> coffeeList = new ArrayList<>();
+//?   Maybe I don't need this
+//    @OneToMany(cascade = CascadeType.MERGE)
+//    private Collection<Coffee> coffeeList = new ArrayList<>();
     @ManyToMany(cascade = CascadeType.MERGE)
     private Collection<Coffee> favList = new ArrayList<>();
-
-
 }
