@@ -32,7 +32,6 @@ class CoffeeRepositoryTest {
 
         try {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coffee_project", "root", "ironhack");
-
             Statement statement = connection.createStatement();
 
             String modDesc = "ALTER TABLE coffee MODIFY COLUMN description VARCHAR(1000)";
