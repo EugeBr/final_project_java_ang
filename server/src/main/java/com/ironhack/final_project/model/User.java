@@ -1,6 +1,7 @@
 package com.ironhack.final_project.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,16 +19,26 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    //@NotEmpty     unique?
+   // @NotEmpty
     private String username;
     private String profilePicture = "https://res.cloudinary.com/drrxks8d9/image/upload/v1685526907/Coffee/coffee-cup_q3izzc.png";
+  //  @NotEmpty
     private String bio;
+  //  @NotEmpty
     private String password;
-
-    @OneToMany(cascade = CascadeType.MERGE)
-    private Collection<Coffee> coffeeList = new ArrayList<>();
     @ManyToMany(cascade = CascadeType.MERGE)
     private Collection<Coffee> favList = new ArrayList<>();
 
+    public User(String username, String profilePicture, String bio, String password) {
+        this.username = username;
+        this.profilePicture = profilePicture;
+        this.bio = bio;
+        this.password = password;
+    }
 
+    public User(String username, String bio, String password) {
+        this.username = username;
+        this.bio = bio;
+        this.password = password;
+    }
 }

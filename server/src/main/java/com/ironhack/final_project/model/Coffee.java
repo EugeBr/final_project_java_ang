@@ -2,6 +2,8 @@ package com.ironhack.final_project.model;
 
 import com.ironhack.final_project.model.enums.Category;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,9 +21,10 @@ public class Coffee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+   // @NotEmpty(message = "Name can't be empty")
     private String name;
     @Enumerated(EnumType.STRING)
-    // @NotNull(message = "Type can't be null")
+   // @NotNull(message = "Category can't be null")
     private Category category;
     private String imageUrl = "https://res.cloudinary.com/drrxks8d9/image/upload/v1685526907/Coffee/coffee-cup_q3izzc.png";
     private String description;
@@ -33,4 +36,26 @@ public class Coffee {
     @JoinColumn(name = "created_by", nullable = false)
     private User createdBy;
 
+    public Coffee(String name, Category category, String description, String prepTime, List<String> ingredients, List<String> instructions, String notes, User createdBy) {
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.prepTime = prepTime;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
+        this.notes = notes;
+        this.createdBy = createdBy;
+    }
+
+    public Coffee(String name, Category category, String imageUrl, String description, String prepTime, List<String> ingredients, List<String> instructions, String notes, User createdBy) {
+        this.name = name;
+        this.category = category;
+        this.imageUrl = imageUrl;
+        this.description = description;
+        this.prepTime = prepTime;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
+        this.notes = notes;
+        this.createdBy = createdBy;
+    }
 }
