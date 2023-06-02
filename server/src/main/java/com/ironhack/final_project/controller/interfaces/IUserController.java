@@ -12,5 +12,5 @@ public interface IUserController {
     User getUserById(Integer id);
     void updateUser(User user, Integer id);
     void deleteUser(Integer id);
-    //List<Coffee> getAllCoffeesByUserId(Integer id);
+    List<Coffee> getAllCoffeesByUserId(Integer id);
 }

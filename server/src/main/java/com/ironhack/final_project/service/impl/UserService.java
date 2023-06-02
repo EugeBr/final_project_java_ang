@@ -52,12 +52,12 @@ public class UserService implements IUserService {
         userRepository.deleteById(id);
     }
 
-//    @Override
-//    public List<Coffee> getAllCoffeesByUserId(Integer id) {
-//        Optional<User> UserOptional = userRepository.findById(id);
-//        if (UserOptional.isEmpty())
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User " + id + " not found");
-//        return coffeeRepository.findAllByCreatedBy(id);
-//    }
+    @Override
+    public List<Coffee> getAllCoffeesByUserId(Integer id) {
+        Optional<User> UserOptional = userRepository.findById(id);
+        if (UserOptional.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User " + id + " not found");
+        return coffeeRepository.findAllByUserIdParam(id);
+    }
 
 }
