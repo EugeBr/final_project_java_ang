@@ -1,6 +1,6 @@
 [
     {
-        name: "Boozy Whipped Coffee",
+        name: "Boozy Whipped Coffee",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685267552/Coffee/BackgroundEraser_20230528_115049487_xej40c.png",
         description: "What's better than fluffy, sweet whipped coffee over milk? Boozy whipped coffee, of course! This easy cocktail pairs coffee liqueur with milk, all topped with a little cloud of whipped coffee for an Instagram-worthy drink. Perfect for brunch or after dinner, and easy to make vegan.",
@@ -20,7 +20,7 @@
         notes: "Use any sort of granulated sweetener in your whipped coffee, like sugar, coconut sugar, or granulated Swerve. We love whole milk in our whipped coffee because of how rich and delicious it makes the drink, but almond, coconut, oat, or whatever milk you have on hand is fine! For a vegan drink, just use non-dairy milk! We used Kahlúa in our drink, but you can use any coffee liqueur you like."
     },
     {
-        name: "Iced Mexican mocha",
+        name: "Iced Mexican mocha",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685268489/Coffee/BackgroundEraser_20230528_120744518_ks9cak.png",
         description: "This iced Mexican mocha recipe is an easy way to enjoy some of that delicious combination of chocolate and spices. Great recipe for any Mexican holiday parties, including Cinco de Mayo and Día de los Muertos festivities.",
@@ -45,14 +45,14 @@
         notes: "The cayenne pepper doesn't provide a great deal of spice in this recipe, but feel free to omit or adjust measurement as desired."
     },
     {
-        name: "Cold Mango Coffee",
+        name: "Cold Mango Coffee",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685269490/Coffee/BackgroundEraser_20230528_122413998_bg0dsd.png",
         description: "Smooth fruit flavor with a kick of caffeine and sweet cream to get you going in the morning, or any time of day.",
         prep_time: "10 min",
         ingredients: [
             "175gr Fresh mango",
-            "70ml Cold brew coddee",
+            "70ml Cold brew coffee",
             "70ml Sweet cream coffee creamer, frothed"
         ],
         instructions: [
@@ -61,9 +61,9 @@
             "Pour over ice if desired."
         ],
         notes: "Enjoy!"
-    },
+    }, 
     {
-        name: "Biscoff Cloud Coffee",
+        name: "Biscoff Cloud Coffee",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685270124/Coffee/BackgroundEraser_20230528_123413841_vp8xay.png",
         description: "Say hello to one of the most delicious coffees EVER! You may have seen this type of coffee trending recently, so I thought I'd give in to the trend and try it out! Oh my, my question is, how haven't I had one of these before..it's delicious!",
@@ -86,10 +86,10 @@
             "Spoon of coffee cream ontop.",
             "Serve with a crumbled Biscoff cookie and cookie on the side."
         ],
-        notes: "Enjoy fresh and chilled! "
+        notes: "Enjoy fresh and chilled!"
     },
     {
-        name: "Iced Brown Sugar Oatmilk Shaken Espresso",
+        name: "Iced Brown Sugar Oatmilk Shaken Espresso",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685270650/Coffee/BackgroundEraser_20230528_124353505_pdekec.png",
         description: "Amazingly creamy, while being dairy-free. Just strong enough to taste the rich espresso, but not too strong to give me the jitters all day.",
@@ -110,7 +110,7 @@
         notes: "Depending on how sweet you like your coffee, you can reduce the amount of brown sugar to as low as a 1/2 tablespoon and the flavor will still come through. Just also reduce the water and vanilla accordingly. "
     },
     {
-        name: "Dalgona Coffee",
+        name: "Dalgona Coffee",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685271607/Coffee/BackgroundEraser_20230528_125944781_lx6nmk.png",
         description: "Dalgona Coffee is a cold latte drink that comes with a velvety smooth and sweet coffee foam on top. The combination of cold milk and the bittersweet coffee is simply a match made in heaven. And the best part is that you can make it without any special machines - all you need is some arm muscle and patience.",
@@ -132,7 +132,7 @@
         notes: "Use large mixing bowl (having enough space for your whisk to whip air in) and round whisk (fork or spoon will be too hard). Tilt at an angle."
     },
     {
-        name: "Ice Americano",
+        name: "Ice Americano",//!done
         category: "COLD",
         imageUrl: "https://res.cloudinary.com/drrxks8d9/image/upload/v1685290452/Coffee/BackgroundEraser_20230528_181253278_dfa1td.png",
         description: "With just 3 ingredients consisting of ice, espresso, and water, an Iced Americano is one of the easiest and simplest espresso drinks to make.",
