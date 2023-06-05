@@ -64,11 +64,11 @@ public class PopulateDBTest {
         Coffee coffee1 = new Coffee(
                 "Boozy Whipped Coffee",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685267552/Coffee/BackgroundEraser_20230528_115049487_xej40c.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685963696/Coffee/whipped-coffee-cocktail-2_lidbrj.webp",
                 "What's better than fluffy, sweet whipped coffee over milk? Boozy whipped coffee, of course! This easy cocktail pairs coffee liqueur with milk, all topped with a little cloud of whipped coffee for an Instagram-worthy drink. Perfect for brunch or after dinner, and easy to make vegan.",
                 "5 minutes",
                 ingredients1,
-        steps1,
+                steps1,
                 "Use any sort of granulated sweetener in your whipped coffee, like sugar, coconut sugar, or granulated Swerve. We love whole milk in our whipped coffee because of how rich and delicious it makes the drink, but almond, coconut, oat, or whatever milk you have on hand is fine! For a vegan drink, just use non-dairy milk! We used Kahlúa in our drink, but you can use any coffee liqueur you like.",
                 user1);
         coffeeRepository.save(coffee1);
@@ -92,7 +92,7 @@ public class PopulateDBTest {
         Coffee coffee2 = new Coffee(
                 "Iced Mexican mocha",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685268489/Coffee/BackgroundEraser_20230528_120744518_ks9cak.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685268504/Coffee/Iced-Mexican-Mocha-Drink-Recipe-2-1024x1536_oyku8a.jpg",
                 "This iced Mexican mocha recipe is an easy way to enjoy some of that delicious combination of chocolate and spices. Great recipe for any Mexican holiday parties, including Cinco de Mayo and Día de los Muertos festivities.",
                 "10 minutes",
                 ingredients2,
@@ -113,7 +113,7 @@ public class PopulateDBTest {
         Coffee coffee3 = new Coffee(
                 "Cold Mango Coffee",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685269490/Coffee/BackgroundEraser_20230528_122413998_bg0dsd.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685269592/Coffee/2367a87b0adc30f3e31778322eec55d8_u0qlw8.jpg",
                 "Smooth fruit flavor with a kick of caffeine and sweet cream to get you going in the morning, or any time of day.",
                 "10 minutes",
                 ingredients3,
@@ -142,7 +142,7 @@ public class PopulateDBTest {
         Coffee coffee4 = new Coffee(
                 "Biscoff Cloud Coffee",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685270124/Coffee/BackgroundEraser_20230528_123413841_vp8xay.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685963795/Coffee/Vegan_cloud_coffee_nnjcqy.jpg",
                 "Say hello to one of the most delicious coffees EVER! You may have seen this type of coffee trending recently, so I thought I'd give in to the trend and try it out! Oh my, my question is, how haven't I had one of these before..it's delicious!",
                 "5 minutes",
                 ingredients4,
@@ -166,7 +166,7 @@ public class PopulateDBTest {
         Coffee coffee5 = new Coffee(
                 "Iced Brown Sugar Oatmilk Shaken Espresso",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685270650/Coffee/BackgroundEraser_20230528_124353505_pdekec.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964336/Coffee/IcedBrownSugarOatmilkShakenEspresso5-1022x1536_aakgfg.jpg",
                 "Amazingly creamy, while being dairy-free. Just strong enough to taste the rich espresso, but not too strong to give me the jitters all day.",
                 "6 minutes",
                 ingredients5,
@@ -191,7 +191,7 @@ public class PopulateDBTest {
         Coffee coffee6 = new Coffee(
                 "Dalgona Coffee",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685271607/Coffee/BackgroundEraser_20230528_125944781_lx6nmk.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685963595/Coffee/2ee8124cf986d29f499202fac499698f_mqaemx.jpg",
                 "Dalgona Coffee is a cold latte drink that comes with a velvety smooth and sweet coffee foam on top. The combination of cold milk and the bittersweet coffee is simply a match made in heaven. And the best part is that you can make it without any special machines - all you need is some arm muscle and patience.",
                 "4 minutes",
                 ingredients6,
@@ -212,7 +212,7 @@ public class PopulateDBTest {
         Coffee coffee7 = new Coffee(
                 "Ice Americano",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685290452/Coffee/BackgroundEraser_20230528_181253278_dfa1td.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685290466/Coffee/iced-americano-7-1024x1536_aeuwzd.jpg",
                 "With just 3 ingredients consisting of ice, espresso, and water, an Iced Americano is one of the easiest and simplest espresso drinks to make.",
                 "2 minutes",
                 ingredients7,
@@ -238,7 +238,7 @@ public class PopulateDBTest {
         Coffee coffee8 = new Coffee(
                 "Pumpkin Cream Cold Brew",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685291453/Coffee/BackgroundEraser_20230528_183035178_rf8ptl.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964425/Coffee/starbucks-pumpkin-cream-cold-brew-8-1024x1536_zhyl22.jpg",
                 "Pumpkin Cream Cold Brew is a refreshing, caffeinated coffee drink sweetened with vanilla syrup and made creamy with pumpkin cream cold foam. Pumpkin spice topping is dusted on top of the the iced drink.",
                 "5 minutes",
                 ingredients8,
@@ -264,7 +264,7 @@ public class PopulateDBTest {
         Coffee coffee9 = new Coffee(
                 "Vietnamese Coconut Coffee Frappé",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685292534/Coffee/BackgroundEraser_20230528_184837655_e0xl43.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964479/Coffee/Vietnamese-Coconut-Coffee-R2-2-1024x1536_qr2dbm.jpg",
                 "This Vietnamese iced coconut coffee is a popular drink in cafés all over Vietnam. It's a blended coconut slushy made with coconut cream, sweetened condensed milk, and ice that gets topped with some Vietnamese coffee.",
                 "10 minutes",
                 ingredients9,
@@ -312,7 +312,7 @@ public class PopulateDBTest {
         Coffee coffee11 = new Coffee(
                 "Vietnamese egg coffee",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685293640/Coffee/BackgroundEraser_20230528_190701365_gblwyq.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964558/Coffee/caramel_iced_latte_xe8n3b.jpg",
                 "Vietnamese Egg Coffee, Cà Phê Trứng, is a custardy dessert-like coffee made with strongly brewed Vietnamese coffee topped with a sweet, rich yet light, silky foam mixture made from sweetened condensed milk and egg yolk.  It can almost be described as tiramisu in a mug.",
                 "10 minutes",
                 ingredients11,
@@ -333,7 +333,7 @@ public class PopulateDBTest {
         Coffee coffee12 = new Coffee(
                 "Nutella Macchiato",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685294177/Coffee/BackgroundEraser_20230528_191604784_y2ltdk.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685294189/Coffee/Nutella-Machhiato-8-1000x667_xkvb2q.webp",
                 "What do you get when you combine two of my favorite things? Nutella recipes that also use coffee! The chocolate-y hazelnut goodness Nutella with coffee is a winning combination, and you'll love this amazing dessert-worthy coffee drink recipe — a Nutella Macchiato. ",
                 "11 minutes",
                 ingredients12,
@@ -356,7 +356,7 @@ public class PopulateDBTest {
         Coffee coffee13 = new Coffee(
                 "Dirty chai latte",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685294837/Coffee/BackgroundEraser_20230528_192702431_mtdblw.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685294848/Coffee/dcb7cb1890d9a828859cb0f753b1517a_dicyin.jpg",
                 "This dirty chai latte is a blend of bold espresso, sweet & spicy chai concentrate, and your favorite milk in one delicious coffee recipe. Making a homemade version is easier than a drive-thru run to Starbucks! Enjoy this drink any time of year hot or iced.",
                 "5 minutes",
                 ingredients13,
@@ -382,7 +382,7 @@ public class PopulateDBTest {
         Coffee coffee14 = new Coffee(
                 "Cashew gingersnap latte",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685295432/Coffee/BackgroundEraser_20230528_193619905_gxhbft.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964647/Coffee/e0d8346cbdc9d8db546bbd697f8c6c02_e8suy0.jpg",
                 "Spicy, creamy, vegan gingersnap lattes can be yours in minutes with ingredients you probably have in your pantry.",
                 "10 minutes",
                 ingredients14,
@@ -408,7 +408,7 @@ public class PopulateDBTest {
         Coffee coffee15 = new Coffee(
                 "Red Velvet latte",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685295925/Coffee/BackgroundEraser_20230528_194504067_lqnvrk.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685295947/Coffee/Screenshot_2023-05-28-19-43-11-113-edit_com.android.chrome_cutjo4.jpg",
                 "This sinful red velvet latte is the perfect indulgent treat that can also double as an afternoon pick me up. Coffee never tasted so good!",
                 "15 minutes",
                 ingredients15,
@@ -431,7 +431,7 @@ public class PopulateDBTest {
         Coffee coffee16 = new Coffee(
                 "Caramel Macchiato",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685296410/Coffee/BackgroundEraser_20230528_195259283_aqb992.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685296422/Coffee/caramel-macchiato-6a-1024x1536_w3jwea.jpg",
                 "A Caramel Macchiato is a vanilla flavored latte but the order in which the ingredients go into the drink is what makes it different. Frothed milk goes in first, then the espresso. In a latte, the espresso goes in first, then the frothed milk.",
                 "5 minutes",
                 ingredients16,
@@ -451,8 +451,8 @@ public class PopulateDBTest {
         Coffee coffee17 = new Coffee(
                 "Café Bombon",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685296922/Coffee/BackgroundEraser_20230528_200124941_rdbxo3.png",
-                "Café Bombon is a coffee drink originating from Spain. It's two ingredients - espresso and sweetened condensed milk. When put together, it forms a layered look as the sweetened condensed milk holds the espresso up without mixing when poured in like milk does.",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685296933/Coffee/image-3-1-1200x690_g0ahdn.jpg",
+                "Coffee drink originating from Spain. It's two ingredients - espresso and sweetened condensed milk. When put together, it forms a layered look as the sweetened condensed milk holds the espresso up without mixing when poured in like milk does.",
                 "2 minutes",
                 ingredients17,
                 steps17,
@@ -477,7 +477,7 @@ public class PopulateDBTest {
         Coffee coffee18 = new Coffee(
                 "Toasted coconut mocha",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685297293/Coffee/BackgroundEraser_20230528_200756393_kgt3nq.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964726/Coffee/1b3e3ba6fe089b0ba2508c61573783db_rgur7h.jpg",
                 "If you love chocolate, coconut, and coffee, then you'll love these hot Toasted Coconut Mochas topped with homemade whipped cream. The perfect pick me up when you need an energy boost.",
                 "5 minutes",
                 ingredients18,
