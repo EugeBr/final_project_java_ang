@@ -1,6 +1,7 @@
 .example-card {
     max-width: 250px;
     background-color: #f2f2f2cd;
+    box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
   }
 
   .example-card:hover {
