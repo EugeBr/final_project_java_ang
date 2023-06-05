@@ -1,7 +1,23 @@
 .example-card {
     max-width: 250px;
+    background-color: #f2f2f2cd;
+  }
+
+  .example-card:hover {
+    transform: scale(1.03);
+    background-color: #e2dbd0;
   }
   
-  .example-header-image {
-    background-size: cover;
-  }
+.example-header-image {
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+mat-card-content,
+img {
+  margin-top: 8px;
+}
