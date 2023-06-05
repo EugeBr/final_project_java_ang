@@ -47,8 +47,14 @@ public class PopulateDBTest {
         userRepository.deleteAll();
         coffeeRepository.deleteAll();
 
-        User user1 = new User("user1", "bio", "password");
+        User user1 = new User("henry18", "bio", "password");
         userRepository.save(user1);
+
+        User user2 = new User("kathy_78", "https://res.cloudinary.com/drrxks8d9/image/upload/v1660969978/find-a-market/tzfhtl7xw1mulqk7dlmx.jpg","bio", "password");
+        userRepository.save(user2);
+
+        User user3 = new User("Sirsee43", "https://res.cloudinary.com/drrxks8d9/image/upload/v1660978819/find-a-market/qznd8ufrfldfkfpl2all.jpg","bio", "password");
+        userRepository.save(user3);
 
         List<String> ingredients1 = new ArrayList<>();
         ingredients1.add("2 tablespoons hot water");
@@ -98,7 +104,7 @@ public class PopulateDBTest {
                 ingredients2,
                 steps2,
                 "The cayenne pepper doesn't provide a great deal of spice in this recipe, but feel free to omit or adjust measurement as desired.",
-                user1);
+                user3);
         coffeeRepository.save(coffee2);
 
         List<String> ingredients3 = new ArrayList<>();
@@ -119,7 +125,7 @@ public class PopulateDBTest {
                 ingredients3,
                 steps3,
                 "Enjoy!",
-                user1);
+                user2);
         coffeeRepository.save(coffee3);
 
         List<String> ingredients4 = new ArrayList<>();
@@ -148,7 +154,7 @@ public class PopulateDBTest {
                 ingredients4,
                 steps4,
                 "Enjoy fresh and chilled!",
-                user1);
+                user3);
         coffeeRepository.save(coffee4);
 
         List<String> ingredients5 = new ArrayList<>();
@@ -218,7 +224,7 @@ public class PopulateDBTest {
                 ingredients7,
                 steps7,
                 "Because Iced Americano is made with espresso, you should be able to see crema along the top, which you won't see in iced coffee.",
-                user1);
+                user3);
         coffeeRepository.save(coffee7);
 
         List<String> ingredients8 = new ArrayList<>();
@@ -244,7 +250,7 @@ public class PopulateDBTest {
                 ingredients8,
                 steps8,
                 "Make your own pumpkin spice topping by combining: ground cinnamon, ginger, nutmeg and cloves.",
-                user1);
+                user2);
         coffeeRepository.save(coffee8);
 
         List<String> ingredients9 = new ArrayList<>();
@@ -289,7 +295,7 @@ public class PopulateDBTest {
         Coffee coffee10 = new Coffee(
                 "Caramel Iced Latte",
                 COLD,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685293093/Coffee/BackgroundEraser_20230528_185757260_mu622p.png",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964558/Coffee/caramel_iced_latte_xe8n3b.jpg",
                 "Be your own barista with this absolutely delicious cooling iced coffee! Rich espresso with dairy-free milk, swirled with caramel sauce and dairy-free milk foam makes for the most delicious coffee! ",
                 "3 minutes",
                 ingredients10,
@@ -312,13 +318,13 @@ public class PopulateDBTest {
         Coffee coffee11 = new Coffee(
                 "Vietnamese egg coffee",
                 HOT,
-                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685964558/Coffee/caramel_iced_latte_xe8n3b.jpg",
+                "https://res.cloudinary.com/drrxks8d9/image/upload/v1685968969/Coffee/220720_bnnf8u.webp",
                 "Vietnamese Egg Coffee, Cà Phê Trứng, is a custardy dessert-like coffee made with strongly brewed Vietnamese coffee topped with a sweet, rich yet light, silky foam mixture made from sweetened condensed milk and egg yolk.  It can almost be described as tiramisu in a mug.",
                 "10 minutes",
                 ingredients11,
                 steps11,
                 "Excellent with shortbread cookies!",
-                user1);
+                user2);
         coffeeRepository.save(coffee11);
 
         List<String> ingredients12 = new ArrayList<>();
@@ -362,7 +368,7 @@ public class PopulateDBTest {
                 ingredients13,
                 steps13,
                 "If you're someone who is sensitive to caffeine, you can find decaf espresso and decaf black tea at most grocery stores or online. Substituting with decaf options means you can still enjoy the wonderful rich, sweet, and spicy flavor of this latte without over-doing it on caffeine.",
-                user1);
+                user3);
         coffeeRepository.save(coffee13);
 
         List<String> ingredients14 = new ArrayList<>();
@@ -388,7 +394,7 @@ public class PopulateDBTest {
                 ingredients14,
                 steps14,
                 "Leftover coffee is lovely the next day served chilled or over ice. Reheated, the coffee tends to thicken, so we like it best when made fresh.",
-                user1);
+                user2);
         coffeeRepository.save(coffee14);
 
         List<String> ingredients15 = new ArrayList<>();
@@ -414,7 +420,7 @@ public class PopulateDBTest {
                 ingredients15,
                 steps15,
                 "Serve warm",
-                user1);
+                user3);
         coffeeRepository.save(coffee15);
 
         List<String> ingredients16 = new ArrayList<>();
@@ -437,7 +443,7 @@ public class PopulateDBTest {
                 ingredients16,
                 steps16,
                 "Make a batch of homemade vanilla syrup ahead of time. It'll keep in the refrigerator for up to 2 weeks.",
-                user1);
+                user2);
         coffeeRepository.save(coffee16);
 
         List<String> ingredients17 = new ArrayList<>();
@@ -483,7 +489,7 @@ public class PopulateDBTest {
                 ingredients18,
                 steps18,
                 "Enjoy!",
-                user1);
+                user3);
         coffeeRepository.save(coffee18);
     }
 
@@ -495,7 +501,7 @@ public class PopulateDBTest {
         System.out.println(userList);
         System.out.println(coffeeList);
 
-        assertEquals(1, userList.size());
+        assertEquals(3, userList.size());
         assertEquals(18, coffeeList.size());
     }
 }

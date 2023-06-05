@@ -1,8 +1,7 @@
 .example-card {
-    max-width: 300px;
+    max-width: 250px;
   }
   
   .example-header-image {
-    background-image: url('https://res.cloudinary.com/drrxks8d9/image/upload/v1660934322/find-a-market/xsiwpbh1lmqtgof0ebkl.jpg');
     background-size: cover;
   }

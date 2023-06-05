@@ -1,12 +1,16 @@
 <mat-tab-group animationDuration="2000ms">
   <mat-tab label="HOT">
     <div class="content">
-      <app-coffee-card></app-coffee-card>
+      <div *ngFor="let coffee of hotCoffeeList, let i = index">
+        <app-coffee-card [coffeeProp]="coffee" [index]="i"></app-coffee-card>
+      </div>
     </div>
   </mat-tab>
   <mat-tab label="COLD">
     <div class="content">
-      <app-coffee-card></app-coffee-card>
+      <div *ngFor="let coffee of coldCoffeeList, let i = index">
+        <app-coffee-card [coffeeProp]="coffee" [index]="i"></app-coffee-card>
+      </div>
     </div>
   </mat-tab>
 </mat-tab-group>

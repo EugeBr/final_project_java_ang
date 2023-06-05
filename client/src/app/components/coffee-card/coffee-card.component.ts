@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-coffee-card',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class CoffeeCardComponent {
 
+  @Input("coffeeProp")
+  coffee!: any; //!hacer model
+
+  @Input()
+  index: number;
+
+  constructor() {
+    this.index = 0;
+  }
 }

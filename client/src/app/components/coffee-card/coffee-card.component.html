@@ -1,14 +1,12 @@
 <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Café Bombon</mat-card-title>
-      <mat-card-subtitle>Contributed by: james</mat-card-subtitle>
+      <div mat-card-avatar class="example-header-image" style="background-image: url('{{coffee.createdBy.profilePicture}}')"></div>
+      <mat-card-title>{{ coffee.name }}</mat-card-title>
+      <mat-card-subtitle>Created by: {{ coffee.createdBy.username }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://res.cloudinary.com/drrxks8d9/image/upload/v1685296933/Coffee/image-3-1-1200x690_g0ahdn.jpg" alt="Coffee name">
+    <img mat-card-image [src]="coffee.imageUrl" alt="{{ coffee.name }}">
     <mat-card-content>
-      <p>
-        coffee drink originating from Spain. It's two ingredients - espresso and sweetened condensed milk. When put together, it forms a layered look as the sweetened condensed milk holds the espresso up without mixing when poured in like milk does.
-      </p>
+      <p>{{ coffee.description }}</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
