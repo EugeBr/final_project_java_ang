@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,6 +59,15 @@ public class UserService implements IUserService {
         if (UserOptional.isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User " + id + " not found");
         return coffeeRepository.findAllByUserIdParam(id);
+    }
+
+    @Override
+    public User loginUser(String username, String password) {
+        Optional<User> userOptional = userRepository.findByUsernameAndPassword(username, password);
+        if (userOptional.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
+
+        return userOptional.get();
     }
 
 }
