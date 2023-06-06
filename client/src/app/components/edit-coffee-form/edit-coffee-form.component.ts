@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
@@ -6,13 +6,16 @@ import { CoffeeService } from 'src/app/services/coffee.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-new-coffee-form',
-  templateUrl: './new-coffee-form.component.html',
-  styleUrls: ['./new-coffee-form.component.css']
+  selector: 'app-edit-coffee-form',
+  templateUrl: './edit-coffee-form.component.html',
+  styleUrls: ['./edit-coffee-form.component.css']
 })
-export class NewCoffeeFormComponent {
-  coffeeCreated: boolean = false;
-  coffeeNotCreated: boolean = false;
+export class EditCoffeeFormComponent implements OnInit{
+
+  coffee!: any;
+  coffeeUpdated: boolean = false;
+  coffeeNotUpdated: boolean = false;
+  isOwner: boolean = false;
 
   registerForm: FormGroup;
   nameInput: FormControl;
@@ -32,9 +35,11 @@ export class NewCoffeeFormComponent {
 
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
+  id: number = this.activatedRoute.snapshot.params["id"];
 
   constructor(
     private coffeeService: CoffeeService,
+    private activatedRoute: ActivatedRoute,
     private router: Router
     ) {
 
@@ -63,13 +68,40 @@ export class NewCoffeeFormComponent {
     });
   }
 
+  ngOnInit(): void {
+    this.getCoffee();
+  }
+
+  getCoffee(): void {
+
+    this.coffeeService.getCoffeeById(this.id).subscribe(
+      {
+        next: (data) => {
+          if (this.userId == data.createdBy.id) this.isOwner = true;
+          this.coffee = data;
+          this.nameInput.setValue(data.name);
+          this.categoryInput.setValue(data.category);
+          this.imageUrlInput.setValue(data.imageUrl);
+          this.descriptionInput.setValue(data.description);
+          this.prepTimeInput.setValue(data.prepTime);
+          this.ingredientsInput = data.ingredients;
+          this.instructionsInput = data.instructions;
+          this.notesInput.setValue(data.notes);
+        },
+        error: (e) => {
+          console.log(e);
+        }
+      }
+    );
+  }
+
   onSubmit(): void {
+    //console.log("FORM DATA: ", this.registerForm.value);
     if (this.registerForm.valid) {
-      this.coffeeService.createCoffee(this.registerForm.value).subscribe(
+      this.coffeeService.updateCoffee(this.id, this.registerForm.value).subscribe(
         {
-          next: (data) => {
-            console.log(data);
-            this.coffeeCreated = true;
+          next: () => {
+            this.coffeeUpdated = true;
             this.registerForm.reset();
             setTimeout(() => {
               this.router.navigate(['/']);
@@ -77,7 +109,7 @@ export class NewCoffeeFormComponent {
           },
           error: (e) => {
             console.log(e);
-            this.coffeeNotCreated = true;
+            this.coffeeNotUpdated = true;
           }
         }
       );

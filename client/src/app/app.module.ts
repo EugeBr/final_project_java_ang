@@ -23,12 +23,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CoffeeCardComponent } from './components/coffee-card/coffee-card.component';
+import { EditCoffeeFormComponent } from './components/edit-coffee-form/edit-coffee-form.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { CoffeeCardComponent } from './components/coffee-card/coffee-card.compon
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    CoffeeCardComponent
+    CoffeeCardComponent,
+    EditCoffeeFormComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +66,9 @@ import { CoffeeCardComponent } from './components/coffee-card/coffee-card.compon
     MatInputModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatChipsModule
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

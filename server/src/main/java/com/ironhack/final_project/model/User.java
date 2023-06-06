@@ -19,12 +19,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NotEmpty(message = "Username can't be empty")
+//    @NotEmpty(message = "Username can't be empty")
     private String username;
     private String profilePicture = "https://res.cloudinary.com/drrxks8d9/image/upload/v1660934322/find-a-market/xsiwpbh1lmqtgof0ebkl.jpg";
-    @NotEmpty(message = "Bio can't be empty")
+//    @NotEmpty(message = "Bio can't be empty")
     private String bio;
-    @NotEmpty(message = "password can't be empty")
+//    @NotEmpty(message = "password can't be empty")
     private String password;
     @ManyToMany(cascade = CascadeType.MERGE)
     private Collection<Coffee> favList = new ArrayList<>();

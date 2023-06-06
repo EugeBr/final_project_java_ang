@@ -1,3 +1,5 @@
+
+<mat-spinner *ngIf="!coffee"></mat-spinner>
 <div class="info" *ngIf="coffee">
     <mat-card>
         <img [src]="coffee.imageUrl" alt="{{ coffee.name }}">
@@ -28,5 +30,11 @@
                 <p>{{ coffee.notes }}</p>
             </div>
         </mat-card-content>
+        <div class="buttons" *ngIf="isOwner">
+            <a [routerLink]="['/coffees', coffee.id, 'edit']">
+                <button mat-raised-button >Edit</button>
+            </a>
+            <button mat-raised-button color="warn" (click)="openDialog('350ms', '200ms')">Delete</button>
+        </div>
     </mat-card>
 </div>

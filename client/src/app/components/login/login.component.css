@@ -40,3 +40,8 @@
   * {
     box-sizing: border-box;
   }
+
+ .button button {
+    box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
+    padding: 20px;
+  }
