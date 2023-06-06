@@ -12,4 +12,6 @@ public interface IUserService {
     void updateUser(User user, Integer id);
     void deleteUser(Integer id);
     List<Coffee> getAllCoffeesByUserId(Integer id);
+
+    User loginUser(String username, String password);
 }

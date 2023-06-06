@@ -1,5 +1,6 @@
 package com.ironhack.final_project.controller.impl;
 
+import com.ironhack.final_project.controller.DTO.UserLoginDTO;
 import com.ironhack.final_project.controller.interfaces.IUserController;
 import com.ironhack.final_project.model.Coffee;
 import com.ironhack.final_project.model.User;
@@ -56,6 +57,12 @@ public class UserController implements IUserController {
     @ResponseStatus(HttpStatus.OK)
     public List<Coffee> getAllCoffeesByUserId(@PathVariable Integer id) {
         return userService.getAllCoffeesByUserId(id);
+    }
+
+    @PatchMapping("/users/login")
+    @ResponseStatus(HttpStatus.OK)
+    public User loginUser(@RequestBody UserLoginDTO userLoginDTO) {
+        return userService.loginUser(userLoginDTO.getUsername(), userLoginDTO.getPassword());
     }
 }
 
