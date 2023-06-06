@@ -1,4 +1,4 @@
-<div class="info" *ngIf="coffee">
+<div class="info">
     <mat-card>
         <img [src]="coffee.imageUrl" alt="{{ coffee.name }}">
         <mat-card-content>
@@ -28,5 +28,11 @@
                 <p>{{ coffee.notes }}</p>
             </div>
         </mat-card-content>
+        <div class="buttons">
+            <a [routerLink]="['/coffees', coffee.id, 'edit']">
+                <button mat-raised-button >Edit</button>
+            </a>
+            <button mat-raised-button color="warn">Delete</button>
+        </div>
     </mat-card>
 </div>

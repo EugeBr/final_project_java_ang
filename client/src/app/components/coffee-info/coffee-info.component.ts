@@ -13,7 +13,7 @@ export class CoffeeInfoComponent implements OnInit {
 
   constructor(
     private coffeeService: CoffeeService,
-    private activatedRoute: ActivatedRoute,
+    private activatedRoute: ActivatedRoute
   ) { };
 
   ngOnInit(): void {
