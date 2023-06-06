@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent, MatChipEditedEvent } from '@angular/material/chips';
 import { CoffeeService } from 'src/app/services/coffee.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-coffee-form',
@@ -32,7 +33,10 @@ export class NewCoffeeFormComponent {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
 
-  constructor(private coffeeService: CoffeeService) {
+  constructor(
+    private coffeeService: CoffeeService,
+    private router: Router
+    ) {
 
     this.nameInput = new FormControl('', Validators.required);
     this.categoryInput = new FormControl('', Validators.required);
@@ -60,7 +64,6 @@ export class NewCoffeeFormComponent {
   }
 
   onSubmit(): void {
-    //console.log("FORM DATA: ", this.registerForm.value);
     if (this.registerForm.valid) {
       this.coffeeService.createCoffee(this.registerForm.value).subscribe(
         {
@@ -68,6 +71,9 @@ export class NewCoffeeFormComponent {
             console.log(data);
             this.coffeeCreated = true;
             this.registerForm.reset();
+            setTimeout(() => {
+              this.router.navigate(['/']);
+            }, 1000);
           },
           error: (e) => {
             console.log(e);

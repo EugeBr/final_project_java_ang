@@ -1,12 +1,13 @@
+<mat-spinner *ngIf="!hotCoffeeList || !coldCoffeeList"></mat-spinner>
 <mat-tab-group animationDuration="2000ms">
-  <mat-tab label="HOT">
+  <mat-tab label="HOT" *ngIf="hotCoffeeList">
     <div class="content">
       <div *ngFor="let coffee of hotCoffeeList, let i = index">
         <app-coffee-card [coffeeProp]="coffee" [index]="i"></app-coffee-card>
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="COLD">
+  <mat-tab label="COLD" *ngIf="hotCoffeeList">
     <div class="content">
       <div *ngFor="let coffee of coldCoffeeList, let i = index">
         <app-coffee-card [coffeeProp]="coffee" [index]="i"></app-coffee-card>

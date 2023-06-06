@@ -1,4 +1,4 @@
-<div class="container" *ngIf="coffee">
+<div class="container" *ngIf="coffee && isOwner">
     <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
         <div>
             <h1>Update coffee</h1>

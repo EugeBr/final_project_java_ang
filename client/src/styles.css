@@ -16,3 +16,8 @@ body {
   'GRAD' 0,
   'opsz' 48
 }
+
+mat-spinner {
+  margin: 300px auto;
+  position: absolute;
+}

@@ -15,6 +15,7 @@ export class EditCoffeeFormComponent implements OnInit{
   coffee!: any;
   coffeeUpdated: boolean = false;
   coffeeNotUpdated: boolean = false;
+  isOwner: boolean = false;
 
   registerForm: FormGroup;
   nameInput: FormControl;
@@ -38,7 +39,8 @@ export class EditCoffeeFormComponent implements OnInit{
 
   constructor(
     private coffeeService: CoffeeService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
     ) {
 
     this.nameInput = new FormControl('', Validators.required);
@@ -75,8 +77,8 @@ export class EditCoffeeFormComponent implements OnInit{
     this.coffeeService.getCoffeeById(this.id).subscribe(
       {
         next: (data) => {
+          if (this.userId == data.createdBy.id) this.isOwner = true;
           this.coffee = data;
-          console.log(data);
           this.nameInput.setValue(data.name);
           this.categoryInput.setValue(data.category);
           this.imageUrlInput.setValue(data.imageUrl);
@@ -98,10 +100,12 @@ export class EditCoffeeFormComponent implements OnInit{
     if (this.registerForm.valid) {
       this.coffeeService.updateCoffee(this.id, this.registerForm.value).subscribe(
         {
-          next: (data) => {
-            console.log(data);
+          next: () => {
             this.coffeeUpdated = true;
             this.registerForm.reset();
+            setTimeout(() => {
+              this.router.navigate(['/']);
+            }, 1000);
           },
           error: (e) => {
             console.log(e);
