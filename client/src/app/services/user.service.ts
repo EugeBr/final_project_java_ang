@@ -26,4 +26,8 @@ export class UserService {
   deleteUser(id : number) : Observable<any>{
     return this.http.delete(`${this.API_URL}/${id}`);
   }
+
+  login(formData: any) : Observable<any>{
+    return this.http.patch(`${this.API_URL}/login`, formData);
+  }
 }

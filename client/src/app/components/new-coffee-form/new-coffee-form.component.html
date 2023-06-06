@@ -3,51 +3,81 @@
         <div>
             <h1>Add a new coffee</h1>
         </div>
+
         <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput type="text" formControlName="name">
         </mat-form-field>
+
         <div>
             <mat-radio-group formControlName="category">
                 <mat-radio-button value="HOT">HOT</mat-radio-button>
                 <mat-radio-button value="COLD">COLD</mat-radio-button>
             </mat-radio-group>
         </div>
+
         <mat-form-field appearance="fill">
             <mat-label>Image Url</mat-label>
-            <input matInput type="text" name="imageUrl">
+            <input matInput type="text" formControlName="imageUrl">
         </mat-form-field>
+
         <mat-form-field hintLabel="Max 300 characters">
             <mat-label>Description</mat-label>
             <textarea matInput #input maxlength="300" formControlName="description"></textarea>
             <mat-hint align="end">{{input.value.length}}/300</mat-hint>
         </mat-form-field>
+
         <mat-form-field appearance="fill">
             <mat-label>Prep-time</mat-label>
             <input matInput type="text" formControlName="prepTime" placeholder="5 minutes">
         </mat-form-field>
-        
+
         <mat-form-field appearance="fill">
-            <!--*ngFor="let ing of ingredientsInput, let i = index"--> 
-            <ul>
-                <li>New ingredient</li>
-            </ul>
             <mat-label>Ingredients</mat-label>
-            <input matInput type="text" name="newIngredient">
-            <button mat-button>+ Add ingredient</button>
+            <mat-chip-grid #chipGrid aria-label="Enter ingredient" formControlName="ingredients">
+                <mat-chip-row *ngFor="let ing of ingredientsInput" (removed)="removeIng(ing)" [editable]="true"
+                    (edited)="editIng(ing, $event)" [aria-description]="'press enter to edit ' + ing">
+                    {{ing}}
+                    <button matChipRemove [attr.aria-label]="'remove ' + ing">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip-row>
+                <input placeholder="New ingredient..." [matChipInputFor]="chipGrid"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addIng($event)" />
+            </mat-chip-grid>
         </mat-form-field>
+
         <mat-form-field appearance="fill">
             <mat-label>Instructions</mat-label>
-            <input matInput type="text" name="newInstruction">
-            <button mat-button>+ Add instruction</button>
+            <mat-chip-grid #chipGrid2 aria-label="Enter instruction" formControlName="instructions">
+                <mat-chip-row *ngFor="let inst of instructionsInput" (removed)="removeInst(inst)" [editable]="true"
+                    (edited)="editInst(inst, $event)" [aria-description]="'press enter to edit ' + inst">
+                    {{inst}}
+                    <button matChipRemove [attr.aria-label]="'remove ' + inst">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip-row>
+                <input placeholder="New instruction..." [matChipInputFor]="chipGrid2"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="addInst($event)" />
+            </mat-chip-grid>
         </mat-form-field>
+
         <mat-form-field hintLabel="Max 150 characters">
             <mat-label>Notes</mat-label>
             <textarea matInput #input maxlength="150" formControlName="notes"></textarea>
             <mat-hint align="end">{{input.value.length}}/150</mat-hint>
         </mat-form-field>
+
         <div class="button">
-          <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>  
+            <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
+        </div>
+        <div *ngIf="coffeeCreated" class="success">
+            New coffee added! Good job!
+        </div>
+        <div *ngIf="coffeeNotCreated" class="fail">
+            Something went wrong, try again.
         </div>
     </form>
 </div>
