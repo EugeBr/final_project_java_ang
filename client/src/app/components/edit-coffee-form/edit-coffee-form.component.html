@@ -1,3 +1,7 @@
+<div class="error" *ngIf="!isOwner">
+    <img src="../../../assets/403.png" alt="erro403">
+</div>
+
 <div class="container" *ngIf="coffee && isOwner">
     <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
         <div>
@@ -74,10 +78,10 @@
             <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">Submit</button>
         </div>
         <div *ngIf="coffeeUpdated" class="success">
-            Coffee updated! Good job!
+            Coffee updated! Great job!
         </div>
         <div *ngIf="coffeeNotUpdated" class="fail">
-            Something went wrong, try again.
+            Something went wrong, please try again.
         </div>
     </form>
 </div>
