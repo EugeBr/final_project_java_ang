@@ -8,4 +8,5 @@ public interface ICoffeeService {
     Coffee getCoffeeById(Integer id);
     void updateCoffee(Coffee coffee, Integer id);
     void deleteCoffee(Integer id);
+    Coffee getRandomCoffee();
 }
