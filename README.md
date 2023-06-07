@@ -15,6 +15,10 @@ Developed with Java Spring and MySQL in the back end and Angular in the front en
 
 Designed for coffee lovers and those who want share new ways of drinking coffee.
 
+<div align="center">
+    <img src="" alt="diagram" width="400" height="400">
+    <img src="" alt="diagram" width="400" height="400">
+</div>
 
 ### Built With
 
@@ -55,19 +59,19 @@ To run the application locally, you will need to open the server files in your p
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## User Stories
+## Functionalities
 
--  `Signup`: As a user I can sign up in the platform so that I can start creating saving favorite coffees.
--  `Login`: As a user I can login to the platform so that I can edit or delete my coffees.
--  `Logout`: As a user I can logout from the platform.
--  `Profile`: As a user I can see the coffees I created as well as edit my profile data.
--  `Add coffees`: As a user I can add a coffee so that I can share it with the community.
--  `List coffees`: As a non/user I can see all coffees.
--  `See coffee details`: As a non/user I can see any coffee details.
--  `Search coffees`: As a non/user I can search coffees by name.
--  `Add to favorites`: As a user I can add a coffee to favorite so that I can save the coffees that I liked the most.
--  `Random coffee`: As a user I can click on the random link and it will show me a new coffee for me to discover.
--  `404`: As an non/user I can see a 404 page if I try to reach a page that does not exist.
+-  `Signup`: As a user you can sign up in the platform so that you can start creating and saving favorite coffees.
+-  `Login`: As a user you can login to the platform so that you can edit or delete your coffees.
+-  `Logout`: As a user you can logout from the platform.
+-  `Profile`: As a user you can see the coffees you created as well as edit your profile data.
+-  `Add coffees`: As a user you can add a coffee so that you can share it with the community.
+-  `List coffees`: As a non/user you can see all coffees.
+-  `See coffee details`: As a non/user you can see any coffee details.
+-  `Search coffees`: As a non/user you can search coffees by name.
+-  `Add to favorites`: As a user you can add a coffee to favorites so that you can save the coffees that you liked the most.
+-  `Random coffee`: As a user you can click on the random link and it will show you a new coffee to discover.
+-  `404`: As an non/user you can see a 404 page if you try to reach a page that does not exist.
 
 
 
