@@ -33,6 +33,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { CoffeeCardComponent } from './components/coffee-card/coffee-card.component';
 import { EditCoffeeFormComponent } from './components/edit-coffee-form/edit-coffee-form.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { TweetsComponent } from './components/tweets/tweets.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ProfileComponent,
     CoffeeCardComponent,
     EditCoffeeFormComponent,
-    DialogComponent
+    DialogComponent,
+    TweetsComponent
   ],
   imports: [
     BrowserModule,

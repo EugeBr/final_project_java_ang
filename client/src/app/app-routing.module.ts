@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditCoffeeFormComponent } from './components/edit-coffee-form/edit-coffee-form.component';
+import { TweetsComponent } from './components/tweets/tweets.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: "new",
     component: NewCoffeeFormComponent
+  },
+  {
+    path: "tweets",
+    component: TweetsComponent
   },
   {
     path: "**",
