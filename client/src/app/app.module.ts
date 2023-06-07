@@ -34,6 +34,7 @@ import { CoffeeCardComponent } from './components/coffee-card/coffee-card.compon
 import { EditCoffeeFormComponent } from './components/edit-coffee-form/edit-coffee-form.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { TweetsComponent } from './components/tweets/tweets.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TweetsComponent } from './components/tweets/tweets.component';
     CoffeeCardComponent,
     EditCoffeeFormComponent,
     DialogComponent,
-    TweetsComponent
+    TweetsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

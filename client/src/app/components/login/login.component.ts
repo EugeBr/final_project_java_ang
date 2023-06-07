@@ -1,32 +1,46 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
   form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
   });
 
-  constructor(private userService: UserService) { }
+  hide: boolean = true;
 
-  hide = true;
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
-  submit() {
+  ngOnInit(): void {
+    const isReloading = localStorage.getItem("isReloading");
+    if(isReloading) {
+      localStorage.removeItem("isReloading");
+      this.router.navigate(['/']);
+    };
+  }
+
+  submit(): void {
     if (this.form.valid) {
-     // console.log(this.form.value);
       this.userService.login(this.form.value).subscribe(
         {
           next: (data) => {
-            console.log(data);
+            //console.log(data);
             localStorage.clear();
             localStorage.setItem("user", data.id);
-            console.log("LOCAL-STORAGE: ", localStorage.getItem("user"));
+            localStorage.setItem("isReloading", "true");
+            //console.log("LOCAL-STORAGE: ", localStorage.getItem("user"));
+            window.location.reload();
           },
           error: (e) => {
             console.log(e);
@@ -35,4 +49,5 @@ export class LoginComponent {
       );
     }
   }
+
 }
