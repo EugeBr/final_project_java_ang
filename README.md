@@ -13,12 +13,12 @@ The Coffee Book is a simple website that uses 2 models, full CRUD operations, an
 
 Developed with Java Spring and MySQL in the back end and Angular in the front end, styled with Material UI.
 
-Developed for coffee lovers and those who want share new ways of drinking coffee.
+Designed for coffee lovers and those who want share new ways of drinking coffee.
 
 
 ### Built With
 
-* [![Spring][Spring]][Next-url]
+* [Spring]
 * [![MySQL][MySQL]][React-url]
 * [![Angular][Angular]][Angular-url]
 * [![TypeScript][TypeScript]][Svelte-url]
