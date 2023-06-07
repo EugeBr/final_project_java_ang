@@ -9,7 +9,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The Coffee Book is a simple website that uses 2 models, full CRUD operations, and a login/logout process.
+The Coffee Book is a simple website that uses 2 models, full CRUD operations, microservices and a login/logout process.
 
 Developed with Java Spring and MySQL in the back end and Angular in the front end, styled with Material UI.
 
@@ -71,6 +71,7 @@ To run the application locally, you will need to open the server files in your p
 -  `Search coffees`: As a non/user you can search coffees by name.
 -  `Add to favorites`: As a user you can add a coffee to favorites so that you can save the coffees that you liked the most.
 -  `Random coffee`: As a user you can click on the random link and it will show you a new coffee to discover.
+-  `Coffee tweets`: As a non/user you can read a list of funny tweets about coffee.
 -  `404`: As an non/user you can see a 404 page if you try to reach a page that does not exist.
 
 
