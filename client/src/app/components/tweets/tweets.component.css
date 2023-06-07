@@ -1,0 +1,9 @@
+.container {
+    text-align: center;
+    background-color: #f2f2f2cd;
+}
+
+img {
+    margin: 30px;
+    box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
+}
