@@ -6,7 +6,7 @@
     height: 300px;
     object-fit: cover;
     opacity: 0.8;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
   }
 
   .info {
@@ -14,7 +14,6 @@
     margin: 50px auto;
     background-color: #f2f2f2cd;
     box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
-    border-radius: 10px;
   }
 
   mat-card-content {
