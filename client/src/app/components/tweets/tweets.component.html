@@ -1,3 +1,4 @@
+<mat-spinner *ngIf="!tweetList"></mat-spinner>
 <div class="container" *ngFor="let tweet of tweetList">
-<img [src]="tweet.tweetUrl" alt="tweet">
+    <img [src]="tweet.tweetUrl" alt="tweet">
 </div>

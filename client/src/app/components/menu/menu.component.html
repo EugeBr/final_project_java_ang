@@ -1,37 +1,44 @@
+<div class="user" *ngIf="isLoggedIn">
+  <div mat-card-avatar class="example-header-image" style="background-image: url('{{user.profilePicture}}')"></div>
+</div>
 <div class="menu">
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-  <mat-icon>more_vert</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
-  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-    <button mat-menu-item>
-      <mat-icon class="material-symbols-rounded red">home</mat-icon>
-      <span>Home</span>
-    </button>
-  </a>
-  <a routerLink="/new">
-    <button mat-menu-item>
-      <mat-icon class="material-symbols-rounded">add_circle</mat-icon>
-      <span>Add new coffee</span>
-    </button>
-  </a>
-  <a routerLink="/random">
-    <button mat-menu-item>
-      <mat-icon class="material-symbols-rounded">coffee</mat-icon>
-      <span>Random coffee</span>
-    </button>
-  </a>
-  <a routerLink="/tweets">
-    <button mat-menu-item>
-      <mat-icon class="material-symbols-rounded">flutter_dash</mat-icon>
-      <span>Coffee tweets</span>
-    </button>
-  </a>
-  <a routerLink="/login">
-    <button mat-menu-item>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a routerLink="/">
+      <button mat-menu-item>
+        <mat-icon class="material-symbols-rounded red">home</mat-icon>
+        <span>Home</span>
+      </button>
+    </a>
+    <a [routerLink]="isLoggedIn ? ['/new'] : ['/login']">
+      <button mat-menu-item>
+        <mat-icon class="material-symbols-rounded">add_circle</mat-icon>
+        <span>Add new coffee</span>
+      </button>
+    </a>
+    <a routerLink="/random">
+      <button mat-menu-item>
+        <mat-icon class="material-symbols-rounded">coffee</mat-icon>
+        <span>Random coffee</span>
+      </button>
+    </a>
+    <a routerLink="/tweets">
+      <button mat-menu-item>
+        <mat-icon class="material-symbols-rounded">flutter_dash</mat-icon>
+        <span>Coffee tweets</span>
+      </button>
+    </a>
+    <a routerLink="/login" *ngIf="!isLoggedIn">
+      <button mat-menu-item>
+        <mat-icon class="material-symbols-rounded">accessibility_new</mat-icon>
+        <span>Login</span>
+      </button>
+    </a>
+    <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
       <mat-icon class="material-symbols-rounded">accessibility_new</mat-icon>
-      <span>Login</span>
+      <span>Logout</span>
     </button>
-  </a>
-</mat-menu>
+  </mat-menu>
 </div>
