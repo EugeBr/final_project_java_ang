@@ -15,11 +15,6 @@ Developed with Java Spring and MySQL in the backend and Angular in the frontend,
 
 Designed for coffee lovers and those who want to share new ways of drinking coffee.
 
-<div align="center">
-    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686169972/Coffee/usecase.diagram_gj9wlh.png" alt="diagram" width="400" height="400">
-    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686169972/Coffee/class.diagram_pzguhs.png" alt="diagram" width="400" height="400">
-</div>
-
 ### Built With
 
 * ![Spring][Spring]
@@ -75,6 +70,10 @@ To run the application locally, you will need to open the server files in your p
 -  `404`: As an non/user you can see a 404 page if you try to reach a page that does not exist.
 
 
+<div align="center">
+    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686169972/Coffee/usecase.diagram_gj9wlh.png" alt="diagram" width="400" height="400">
+    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686169972/Coffee/class.diagram_pzguhs.png" alt="diagram" width="400" height="400">
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
