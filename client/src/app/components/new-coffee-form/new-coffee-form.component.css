@@ -14,7 +14,7 @@ form {
     padding: 30px;
     border-radius: 10px;
     background-color: #f2f2f2cd;
-    box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
+    box-shadow: 12px 18px 28px -3px rgba(143, 135, 143, 1);
     margin-bottom: 75px;
 }
 
@@ -28,19 +28,21 @@ mat-form-field {
 
 .button {
     margin-top: 20px;
+    box-shadow: 12px 18px 28px -3px rgba(143,135,143,1);
 }
 
-.success{
+.success {
     color: #2f9970;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     margin-top: 15px;
-  }
-  .fail{
+}
+
+.fail {
     color: #ed6568;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     margin-top: 15px;
-  }
+}
