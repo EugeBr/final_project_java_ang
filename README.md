@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="client/src/assets/banner-logo.png" alt="Logo" width="100%" height="200px">
+    <img src="client/src/assets/banner-logo.png" alt="Logo" width="100%" height="150px">
 </div>
 
 <!-- ABOUT THE PROJECT -->
