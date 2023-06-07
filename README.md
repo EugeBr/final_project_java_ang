@@ -24,10 +24,6 @@ Designed for coffee lovers and those who want share new ways of drinking coffee.
 * ![TypeScript][TypeScript]
 * ![MaterialUI][MaterialUI]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ## Getting Started
 
 ### Prerequisites
@@ -37,9 +33,9 @@ To run the application locally, you will need to open the server files in your p
 ### Installation
 
 1. Clone the repo
-   ```sh
-   $ git clone https://github.com/your_username_/Project-Name.git
-   ```
+
+   ```sh $ git clone https://github.com/your_username_/Project-Name.git ```
+   
 2. Install NPM packages
    ```sh
    $ npm install
