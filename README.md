@@ -19,10 +19,10 @@ Designed for coffee lovers and those who want share new ways of drinking coffee.
 ### Built With
 
 * ![Spring][Spring]
-* [![MySQL][MySQL]][React-url]
-* [![Angular][Angular]][Angular-url]
-* [![TypeScript][TypeScript]][Svelte-url]
-* [![MaterialUI][MaterialUI]][Laravel-url]
+* ![MySQL][MySQL]
+* ![Angular][Angular]
+* ![TypeScript][TypeScript]
+* ![MaterialUI][MaterialUI]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
