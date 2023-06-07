@@ -13,4 +13,5 @@ public interface ICoffeeController {
     void updateCoffee(Coffee coffee, Integer id);
     void deleteCoffee(Integer id);
     List<Coffee> getAllCoffeesParam(String param);
+    Coffee getRandomCoffee();
 }

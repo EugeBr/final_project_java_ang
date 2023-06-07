@@ -56,4 +56,10 @@ public class CoffeeController implements ICoffeeController {
     public List<Coffee> getAllCoffeesParam(@RequestParam (value = "q") String q) {
         return coffeeRepository.findAllByNameContaining(q);
     }
+
+    @GetMapping("/coffees/random")
+    @ResponseStatus(HttpStatus.OK)
+    public Coffee getRandomCoffee() {
+        return coffeeService.getRandomCoffee();
+    }
 }

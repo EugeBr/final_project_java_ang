@@ -8,7 +8,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class CoffeeService implements ICoffeeService {
@@ -43,5 +45,13 @@ public class CoffeeService implements ICoffeeService {
         Optional<Coffee> coffeeOptional = coffeeRepository.findById(id);
         if(coffeeOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Coffee" + id + "not found");
         coffeeRepository.deleteById(id);
+    }
+
+    @Override
+    public Coffee getRandomCoffee() {
+        Random random = new Random();
+        int index = random.nextInt((int) coffeeRepository.count());
+        List<Coffee> coffeeList = coffeeRepository.findAll();
+        return coffeeList.get(index);
     }
 }
