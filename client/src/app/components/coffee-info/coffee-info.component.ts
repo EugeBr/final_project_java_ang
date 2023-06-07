@@ -27,17 +27,37 @@ export class CoffeeInfoComponent implements OnInit {
   }
 
   getCoffee(): void {
-    this.coffeeService.getCoffeeById(this.id).subscribe(
-      {
-        next: (data) => {
-          this.coffee = data;
-          if (this.userId == data.createdBy.id) this.isOwner = true;
-        },
-        error: (e) => {
-          console.log(e);
+
+    let url = document.location.href;
+    let urlArray = url.split('/');
+    let endPoint = urlArray[urlArray.length - 1];
+
+    if (endPoint === "random") {
+      this.coffeeService.getRandomCoffee().subscribe(
+        {
+          next: (data) => {
+            this.coffee = data;
+            if (this.userId == data.createdBy.id) this.isOwner = true;
+          },
+          error: (e) => {
+            console.log(e);
+          }
         }
-      }
-    );
+      );
+    } else if (endPoint === this.id.toString()) {
+      this.coffeeService.getCoffeeById(this.id).subscribe(
+        {
+          next: (data) => {
+            this.coffee = data;
+            if (this.userId == data.createdBy.id) this.isOwner = true;
+          },
+          error: (e) => {
+            console.log(e);
+          }
+        }
+      );
+    }
+    
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
