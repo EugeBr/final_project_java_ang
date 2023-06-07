@@ -16,8 +16,8 @@ Developed with Java Spring and MySQL in the backend and Angular in the frontend,
 Designed for coffee lovers and those who want to share new ways of drinking coffee.
 
 <div align="center">
-    <img src="" alt="diagram" width="400" height="400">
-    <img src="" alt="diagram" width="400" height="400">
+    <img src="class.diagram" alt="diagram" width="400" height="400">
+    <img src="usecase.diagram" alt="diagram" width="400" height="400">
 </div>
 
 ### Built With
