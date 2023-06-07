@@ -38,21 +38,21 @@ To run the application locally, you will need to open the server files in your p
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   $ git clone https://github.com/your_username_/Project-Name.git
    ```
 2. Install NPM packages
    ```sh
-   npm install
+   $ npm install
    ```
 3. Enter your DB info in `resourses/aplication.properties`
    ```md
-   spring.datasource.username=root
-   spring.datasource.password=ironhack
+   spring.datasource.username=yourrootname
+   spring.datasource.password=yourpassword
    ```
 4. Run `FinalProjectApplication.java` in the server
 5. And run the client whit the command 
    ```sh
-   ng serve
+   $ ng serve
    ``` 
 6. Open the application in localhost 
 
