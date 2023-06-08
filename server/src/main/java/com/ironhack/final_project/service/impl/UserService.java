@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +25,7 @@ public class UserService implements IUserService {
     @Override
     public void saveUser(User user) {
         Optional<User> userOptional = userRepository.findByUsername(user.getUsername());
-        if (userOptional.isPresent()) {throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "This username already exist");}
+        if (userOptional.isPresent()) {throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "This username is taken!");}
         userRepository.save(user);
     }
 

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   });
 
   hide: boolean = true;
+  error!: string;
 
   constructor(
     private userService: UserService,
@@ -35,15 +36,13 @@ export class LoginComponent implements OnInit {
       this.userService.login(this.form.value).subscribe(
         {
           next: (data) => {
-            //console.log(data);
-            localStorage.clear();
             localStorage.setItem("user", data.id);
             localStorage.setItem("isReloading", "true");
-            //console.log("LOCAL-STORAGE: ", localStorage.getItem("user"));
             window.location.reload();
           },
           error: (e) => {
             console.log(e);
+            this.error = e.error.message;
           }
         }
       );

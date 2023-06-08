@@ -20,6 +20,7 @@
                     </button>
                 </mat-form-field>
             </div>
+            <p *ngIf="error" class="error">Ups! {{ error }}</p>
             <div class="button">
                 <p>No account? <a routerLink="/register">Register</a></p>
                 <button type="submit" mat-button>Login</button>

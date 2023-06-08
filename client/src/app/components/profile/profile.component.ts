@@ -57,6 +57,7 @@ export class ProfileComponent implements OnInit {
             this.passwordInput.setValue(data.password);
             this.favListInput.setValue(data.favList);
             this.favList = data.favList;
+            console.log(this.favList);
           },
           error: (e) => {
             console.log(e);
@@ -71,6 +72,7 @@ export class ProfileComponent implements OnInit {
       {
         next: (data) => {
           this.coffeeList = data;
+          console.log(this.coffeeList);
         },
         error: (e) => {
           console.log(e);
