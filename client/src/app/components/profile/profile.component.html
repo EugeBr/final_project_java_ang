@@ -1,1 +1,112 @@
-<p>profile works!</p>
+<div class="profile">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img mat-card-image class="profile-picture" [src]="user.profilePicture" alt="{{ user.username }}">
+            <h1>{{ user.username }}</h1>
+            <p>{{ user.bio }}</p>
+            <div class="buttons">
+                <button [ngClass]="{'selected': coffeeTab}" (click)="coffeeActive()" class="btn">
+                    <mat-icon class="material-symbols-rounded">coffee</mat-icon>
+                    <span>My coffees</span>
+                </button>
+                <button [ngClass]="{'selected': favsTab}" (click)="favsActive()" class="btn">
+                    <mat-icon class="material-symbols-rounded">favorite</mat-icon>
+                    <span>Favorites</span>
+                </button>
+                <button [ngClass]="{'selected': infoTab}" (click)="infoActive()" class="btn">
+                    <mat-icon class="material-symbols-rounded">person_search</mat-icon>
+                    <span>My info</span>
+                </button>
+            </div>
+        </mat-card-header>
+
+        <mat-card-content class="content">
+
+            <div class="my-coffees" *ngIf="coffeeTab">
+                <div *ngIf="!coffeeList" class="center">
+                    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
+                        alt="nothing">
+                    <h3>Start adding <a href="/new">coffees</a>!</h3>
+                </div>
+                <div *ngFor="let coffee of coffeeList">
+                    <div class="coffee-card">
+                        <img class="coffee-img" [src]="coffee.imageUrl" alt="{{ coffee.name }}">
+                        <div class="card-content">
+                            <div class="title">
+                                <h2>{{ coffee.name}}</h2>
+                                <a href="/coffees/{{ coffee.id }}" class="black"><mat-icon class="material-symbols-rounded">edit_square</mat-icon></a>
+                            </div>
+                            <a href="/coffees/{{ coffee.id }}">More info...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-favs" *ngIf="favsTab">
+                <div *ngIf="!favList" class="center">
+                    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
+                        alt="nothing">
+                    <h3>Start saving <a href="/">coffees</a>!</h3>
+                </div>
+                <div *ngFor="let fav of favList">
+                    <div class="coffee-card">
+                        <img class="coffee-img" [src]="fav.imageUrl" alt="{{ fav.name }}">
+                        <div class="card-content">
+                            <h2>{{ fav.name}}</h2>
+                            <a href="/coffees/{{ fav.id }}">More info...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-details" *ngIf="infoTab">
+                <mat-card>
+                    <mat-card-title>Update your info</mat-card-title>
+                    <mat-card-content>
+                        <form [formGroup]="form" (ngSubmit)="submit()">
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Username</mat-label>
+                                    <input matInput formControlName="username">
+                                    <button mat-icon-button matSuffix>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Profile picture</mat-label>
+                                    <input matInput formControlName="profilePicture">
+                                    <button mat-icon-button matSuffix>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field hintLabel="Max 150 characters">
+                                    <mat-label>Bio</mat-label>
+                                    <textarea matInput #input maxlength="150" formControlName="bio"></textarea>
+                                    <mat-hint align="end">{{input.value.length}}/150</mat-hint>
+                                    <button mat-icon-button matSuffix>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div class="button">
+                                <button mat-raised-button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
