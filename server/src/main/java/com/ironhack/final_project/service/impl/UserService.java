@@ -66,8 +66,29 @@ public class UserService implements IUserService {
         Optional<User> userOptional = userRepository.findByUsernameAndPassword(username, password);
         if (userOptional.isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found");
-
         return userOptional.get();
+    }
+
+    @Override
+    public void saveFavorite(Integer coffeeId, Integer userId) {
+        Optional<Coffee> coffeeOptional = coffeeRepository.findById(coffeeId);
+        Optional<User> userOptional = userRepository.findById(userId);
+        if (userOptional.isEmpty() || coffeeOptional.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found");
+        User user = userOptional.get();
+        user.saveFav(coffeeOptional.get());
+        userRepository.save(user);
+    }
+
+    @Override
+    public void removeFavorite(Integer coffeeId, Integer userId) {
+        Optional<Coffee> coffeeOptional = coffeeRepository.findById(coffeeId);
+        Optional<User> userOptional = userRepository.findById(userId);
+        if (userOptional.isEmpty() || coffeeOptional.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not found");
+        User user = userOptional.get();
+        user.removeFav(coffeeOptional.get());
+        userRepository.save(user);
     }
 
 }

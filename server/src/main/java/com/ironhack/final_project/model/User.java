@@ -26,8 +26,8 @@ public class User {
     private String bio;
 //    @NotEmpty(message = "password can't be empty")
     private String password;
-    @ManyToMany(cascade = CascadeType.MERGE)
-    private Collection<Coffee> favList = new ArrayList<>();
+    @ElementCollection
+    private Collection<CoffeeDTO> favList = new ArrayList<>();
 
     public User(String username, String profilePicture, String bio, String password) {
         this.username = username;
@@ -40,5 +40,13 @@ public class User {
         this.username = username;
         this.bio = bio;
         this.password = password;
+    }
+
+    public void saveFav(Coffee coffee) {
+        this.favList.add(new CoffeeDTO(coffee));
+    }
+
+    public void removeFav(Coffee coffee) {
+        this.favList.remove(new CoffeeDTO(coffee));
     }
 }

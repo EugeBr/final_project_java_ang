@@ -28,11 +28,15 @@ public class Coffee {
     private Category category;
     private String imageUrl = "https://res.cloudinary.com/drrxks8d9/image/upload/v1685526907/Coffee/coffee-cup_q3izzc.png";
     @NotEmpty(message = "Description can't be empty")
+    @Column(length = 1000)
     private String description;
     @NotEmpty(message = "PrepTime can't be empty")
     private String prepTime;
+    @Column(length = 1000)
     private List<String> ingredients = new ArrayList<>();
+    @Column(length = 1500)
     private List<String> instructions = new ArrayList<>();
+    @Column(length = 1000)
     private String notes;
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "created_by", nullable = false)

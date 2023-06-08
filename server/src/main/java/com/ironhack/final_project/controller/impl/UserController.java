@@ -64,6 +64,25 @@ public class UserController implements IUserController {
     public User loginUser(@RequestBody UserLoginDTO userLoginDTO) {
         return userService.loginUser(userLoginDTO.getUsername(), userLoginDTO.getPassword());
     }
+
+    @PatchMapping("users/addfav")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void addCoffeeToFav(
+            @RequestParam Integer coffeeId,
+            @RequestParam Integer userId
+    ) {
+        userService.saveFavorite(coffeeId, userId);
+        System.out.println("adding favorite");
+    }
+
+    @PatchMapping("users/removefav")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void removeCoffeeFromFav(
+            @RequestParam Integer coffeeId,
+            @RequestParam Integer userId
+    ) {
+        userService.removeFavorite(coffeeId, userId);
+    }
 }
 
 

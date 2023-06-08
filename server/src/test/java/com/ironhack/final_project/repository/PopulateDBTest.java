@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,21 +25,6 @@ public class PopulateDBTest {
 
     @BeforeEach
     public void setUp() {
-
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/coffee_project", "root", "ironhack");
-            Statement statement = connection.createStatement();
-
-            statement.executeUpdate("ALTER TABLE coffee MODIFY COLUMN description VARCHAR(1000)");
-            statement.executeUpdate("ALTER TABLE coffee MODIFY COLUMN notes VARCHAR(1000)");
-            statement.executeUpdate("ALTER TABLE coffee MODIFY COLUMN ingredients VARBINARY(1000)");
-            statement.executeUpdate("ALTER TABLE coffee MODIFY COLUMN instructions VARBINARY(1500)");
-
-            statement.close();
-            connection.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         userRepository.deleteAll();
         coffeeRepository.deleteAll();
