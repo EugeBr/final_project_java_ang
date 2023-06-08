@@ -63,7 +63,6 @@ To run the application locally, you will need to open the server files in your p
 -  `Add coffees`: As a user you can add a coffee so that you can share it with the community.
 -  `List coffees`: As a non/user you can see all coffees.
 -  `See coffee details`: As a non/user you can see any coffee details.
--  `Search coffees`: As a non/user you can search coffees by name.
 -  `Add to favorites`: As a user you can add a coffee to favorites so that you can save the coffees that you liked the most.
 -  `Random coffee`: As a user you can click on the random link and it will show you a new coffee to discover.
 -  `Coffee tweets`: As a non/user you can read a list of funny tweets about coffee.
