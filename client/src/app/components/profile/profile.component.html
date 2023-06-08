@@ -31,8 +31,11 @@
                 <div *ngFor="let coffee of coffeeList">
                     <div class="coffee-card">
                         <img class="coffee-img" [src]="coffee.imageUrl" alt="{{ coffee.name }}">
-                        <div>
-                            <h2>{{ coffee.name}}</h2>
+                        <div class="card-content">
+                            <div class="title">
+                                <h2>{{ coffee.name}}</h2>
+                                <a href="/coffees/{{ coffee.id }}" class="black"><mat-icon class="material-symbols-rounded">edit_square</mat-icon></a>
+                            </div>
                             <a href="/coffees/{{ coffee.id }}">More info...</a>
                         </div>
                     </div>
@@ -48,7 +51,7 @@
                 <div *ngFor="let fav of favList">
                     <div class="coffee-card">
                         <img class="coffee-img" [src]="fav.imageUrl" alt="{{ fav.name }}">
-                        <div>
+                        <div class="card-content">
                             <h2>{{ fav.name}}</h2>
                             <a href="/coffees/{{ fav.id }}">More info...</a>
                         </div>
@@ -90,8 +93,8 @@
                                 <mat-form-field>
                                     <mat-label>Password</mat-label>
                                     <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                                        [attr.aria-pressed]="hide">
+                                    <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                                     </button>
                                 </mat-form-field>
