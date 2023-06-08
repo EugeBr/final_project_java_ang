@@ -1,16 +1,29 @@
-
 <mat-spinner *ngIf="!coffee"></mat-spinner>
 <div class="info" *ngIf="coffee">
     <mat-card>
         <img [src]="coffee.imageUrl" alt="{{ coffee.name }}">
         <mat-card-content>
-            <mat-card-title>{{ coffee.name }}</mat-card-title>
+            <div class="title">
+                <mat-card-title>{{ coffee.name }}</mat-card-title>
+                <img *ngIf="!isFav && !isOwner"
+                    src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686228922/Coffee/heart_1_vheyph.png"
+                    alt="heart" class="heart" (click)="like()">
+                <img *ngIf="isFav && !isOwner"
+                    src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686228922/Coffee/heart_fnfmkp.png"
+                    alt="heart-red" class="heart" (click)="unlike()">
+            </div>
             <div class="user">
                 <div mat-card-avatar class="example-header-image"
                     style="background-image: url('{{coffee.createdBy.profilePicture}}')"></div>
                 <mat-card-subtitle>{{ coffee.createdBy.username }}</mat-card-subtitle>
             </div>
-            <p>{{ coffee.description }}</p>
+            <p>
+                <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686229637/Coffee/quote_nrbtyq.png"
+                    alt="quote" class="icon">
+                {{ coffee.description }}
+                <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686229637/Coffee/double-quotes_vjs7eo.png"
+                    alt="quote" class="icon">
+            </p>
             <div class="recipe">
                 <div class="ingredients">
                     <h4>INGREDIENTS</h4>
@@ -32,7 +45,7 @@
         </mat-card-content>
         <div class="buttons" *ngIf="isOwner">
             <a [routerLink]="['/coffees', coffee.id, 'edit']">
-                <button mat-raised-button >Edit</button>
+                <button mat-raised-button>Edit</button>
             </a>
             <button mat-raised-button color="warn" (click)="openDialog('350ms', '200ms')">Delete</button>
         </div>

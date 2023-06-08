@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class CoffeeCardComponent {
 
   @Input("coffeeProp")
-  coffee!: any; //!hacer model
+  coffee!: any; 
 
   @Input()
   index: number;

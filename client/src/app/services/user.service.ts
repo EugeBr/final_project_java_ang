@@ -11,27 +11,36 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUserCoffees(id : number) : Observable<any> {
+  getUserCoffees(id: number): Observable<any> {
     return this.http.get(`${this.API_URL}/${id}/coffees`);
   }
 
-  getUserById(id : number) : Observable<any> {
+  getUserById(id: number): Observable<any> {
     return this.http.get(`${this.API_URL}/${id}`);
   }
 
-  updateUser(id : number, formData: any) {
+  updateUser(id: number, formData: any) {
     return this.http.put(`${this.API_URL}/${id}`, formData);
   }
 
-  deleteUser(id : number) : Observable<any> {
+  deleteUser(id: number): Observable<any> {
     return this.http.delete(`${this.API_URL}/${id}`);
   }
 
-  login(formData: any) : Observable<any> {
+  login(formData: any): Observable<any> {
     return this.http.patch(`${this.API_URL}/login`, formData);
   }
 
-  register(formData: any) : Observable<any> {
+  register(formData: any): Observable<any> {
     return this.http.post(`${this.API_URL}`, formData);
   }
+
+  addFav(coffeeId: number, userId: number) {
+    return this.http.patch(`${this.API_URL}/addfav?coffeeId=${coffeeId}&userId=${userId}`, null);
+  }
+
+  removeFav(coffeeId: number, userId: number) {
+    return this.http.patch(`${this.API_URL}/removefav?coffeeId=${coffeeId}&userId=${userId}`, null);
+  }
+
 }
