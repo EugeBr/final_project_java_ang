@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,8 +16,27 @@ export class ProfileComponent implements OnInit {
   coffeeTab: boolean = true;
   favsTab: boolean = false;
   infoTab: boolean = false;
+  hide: boolean = true;
+  usernameInput: FormControl;
+  profilePictureInput: FormControl;
+  bioInput: FormControl;
+  passwordInput: FormControl;
+  form: FormGroup;
 
-  constructor(private userService: UserService) { };
+  constructor(private userService: UserService) {
+    this.usernameInput = new FormControl('', Validators.required);
+    this.profilePictureInput = new FormControl('');
+    this.bioInput = new FormControl('', Validators.required);
+    this.passwordInput = new FormControl('', Validators.required);
+
+
+    this.form = new FormGroup({
+      username: this.usernameInput,
+      profilePicture: this.profilePictureInput,
+      bio: this.bioInput,
+      password: this.passwordInput
+    });
+  };
 
   ngOnInit(): void {
     this.getUser();
@@ -29,6 +49,10 @@ export class ProfileComponent implements OnInit {
         {
           next: (data) => {
             this.user = data;
+            this.usernameInput.setValue(data.username);
+            this.profilePictureInput.setValue(data.profilePicture);
+            this.bioInput.setValue(data.bio);
+            this.passwordInput.setValue(data.password);
           },
           error: (e) => {
             console.log(e);
@@ -69,6 +93,21 @@ export class ProfileComponent implements OnInit {
     this.coffeeTab = false;
     this.favsTab = false;
     this.infoTab = true;
+  }
+
+  submit(): void {
+    if (this.form.valid) {
+      this.userService.updateUser(this.userId, this.form.value).subscribe(
+        {
+          next: () => {
+            window.location.reload();
+          },
+          error: (e) => {
+            console.log(e);
+          }
+        }
+      );
+    }
   }
 
 }
