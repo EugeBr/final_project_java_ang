@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -12,10 +13,18 @@ export class MenuComponent implements OnInit {
   user!: any;
   isLoggedIn: boolean = false;
 
-  constructor(private userService: UserService) { };
+  constructor(
+    private userService: UserService,
+    private router: Router
+    ) { };
 
   ngOnInit(): void {
     this.getUser();
+    const isReloading = localStorage.getItem("isReloading");
+    if(isReloading) {
+      localStorage.removeItem("isReloading");
+      this.router.navigate(['/']);
+    };
   }
 
   getUser(): void {
@@ -37,6 +46,7 @@ export class MenuComponent implements OnInit {
 
   logout(): void {
     localStorage.removeItem("user");
+    localStorage.setItem("isReloading", "true");
     window.location.reload();
   }
 

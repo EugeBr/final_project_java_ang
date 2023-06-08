@@ -1,1 +1,63 @@
-<p>profile works!</p>
+<div class="profile">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img mat-card-image class="profile-picture" [src]="user.profilePicture" alt="{{ user.username }}">
+            <h1>{{ user.username }}</h1>
+            <p>{{ user.bio }}</p>
+            <div class="buttons">
+                <button [ngClass]="{'selected': coffeeTab}" (click)="coffeeActive()">
+                    <mat-icon class="material-symbols-rounded">coffee</mat-icon>
+                    <span>My coffees</span>
+                </button>
+                <button [ngClass]="{'selected': favsTab}" (click)="favsActive()">
+                    <mat-icon class="material-symbols-rounded">favorite</mat-icon>
+                    <span>Favorites</span>
+                </button>
+                <button [ngClass]="{'selected': infoTab}" (click)="infoActive()">
+                    <mat-icon class="material-symbols-rounded">person_search</mat-icon>
+                    <span>My info</span>
+                </button>
+            </div>
+        </mat-card-header>
+
+        <mat-card-content>
+
+            <div class="my-coffees" *ngIf="coffeeTab">
+                <div *ngIf="!coffeeList" class="center">
+                    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
+                        alt="nothing">
+                    <h3>Start adding <a href="/new">coffees</a>!</h3>
+                </div>
+                <div *ngFor="let coffee of coffeeList">
+                    <div class="coffee-card">
+                        <img class="coffee-img" [src]="coffee.imageUrl" alt="{{ coffee.name }}">
+                        <div>
+                            <h2>{{ coffee.name}}</h2>
+                            <a href="/coffees/{{ coffee.id }}">More info...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-favs" *ngIf="favsTab">
+                <div *ngIf="!favList" class="center">
+                    <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
+                        alt="nothing">
+                    <h3>Start saving <a href="/">coffees</a>!</h3>
+                </div>
+                <div *ngFor="let fav of favList">
+                    <div class="coffee-card">
+                        <img class="coffee-img" [src]="fav.imageUrl" alt="{{ fav.name }}">
+                        <div>
+                            <h2>{{ fav.name}}</h2>
+                            <a href="/coffees/{{ fav.id }}">More info...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="edit-details" *ngIf="infoTab"></div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
