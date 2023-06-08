@@ -1,4 +1,5 @@
-<div class="profile">
+<mat-spinner *ngIf="!user"></mat-spinner>
+<div class="profile" *ngIf="user">
     <mat-card class="example-card">
         <mat-card-header>
             <img mat-card-image class="profile-picture" [src]="user.profilePicture" alt="{{ user.username }}">
@@ -23,7 +24,7 @@
         <mat-card-content class="content">
 
             <div class="my-coffees" *ngIf="coffeeTab">
-                <div *ngIf="!coffeeList" class="center">
+                <div *ngIf="coffeeList.length == 0" class="center">
                     <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
                         alt="nothing">
                     <h3>Start adding <a href="/new">coffees</a>!</h3>
@@ -43,7 +44,7 @@
             </div>
 
             <div class="my-favs" *ngIf="favsTab">
-                <div *ngIf="!favList" class="center">
+                <div *ngIf="favList.length == 0" class="center">
                     <img src="https://res.cloudinary.com/drrxks8d9/image/upload/v1686213299/Coffee/Captura_de_pantalla_2023-06-08_103427_omfxup.png"
                         alt="nothing">
                     <h3>Start saving <a href="/">coffees</a>!</h3>

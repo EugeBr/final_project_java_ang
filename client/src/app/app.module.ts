@@ -11,7 +11,6 @@ import { NewCoffeeFormComponent } from './components/new-coffee-form/new-coffee-
 import { CoffeeInfoComponent } from './components/coffee-info/coffee-info.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { HomeComponent } from './components/home/home.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
@@ -45,7 +44,6 @@ import { FooterComponent } from './components/footer/footer.component';
     CoffeeInfoComponent,
     ErrorPageComponent,
     HomeComponent,
-    SearchBarComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,

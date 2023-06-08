@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   profilePictureInput: FormControl;
   bioInput: FormControl;
   passwordInput: FormControl;
+  favListInput: FormControl;
   form: FormGroup;
 
   constructor(private userService: UserService) {
@@ -28,13 +29,14 @@ export class ProfileComponent implements OnInit {
     this.profilePictureInput = new FormControl('');
     this.bioInput = new FormControl('', Validators.required);
     this.passwordInput = new FormControl('', Validators.required);
-
+    this.favListInput = new FormControl([]);
 
     this.form = new FormGroup({
       username: this.usernameInput,
       profilePicture: this.profilePictureInput,
       bio: this.bioInput,
-      password: this.passwordInput
+      password: this.passwordInput,
+      favList: this.favListInput
     });
   };
 
@@ -53,6 +55,9 @@ export class ProfileComponent implements OnInit {
             this.profilePictureInput.setValue(data.profilePicture);
             this.bioInput.setValue(data.bio);
             this.passwordInput.setValue(data.password);
+            this.favListInput.setValue(data.favList);
+            this.favList = data.favList;
+            console.log(this.favList);
           },
           error: (e) => {
             console.log(e);
@@ -67,6 +72,7 @@ export class ProfileComponent implements OnInit {
       {
         next: (data) => {
           this.coffeeList = data;
+          console.log(this.coffeeList);
         },
         error: (e) => {
           console.log(e);
@@ -74,8 +80,6 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
-
-  //todo GET FAVOURITES
 
   coffeeActive(): void {
     this.coffeeTab = true;

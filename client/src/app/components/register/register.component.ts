@@ -18,6 +18,7 @@ export class RegisterComponent {
   });
 
   hide: boolean = true;
+  error!: string;
 
   constructor(
     private userService: UserService,
@@ -35,6 +36,7 @@ export class RegisterComponent {
           },
           error: (e) => {
             console.log(e);
+            this.error = e.error.message;
           }
         }
       );
