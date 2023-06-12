@@ -51,9 +51,7 @@ export class EditCoffeeFormComponent implements OnInit{
     this.ingredientsArray = new FormControl(this.ingredientsInput, Validators.required);
     this.instructionsArray = new FormControl(this.instructionsInput, Validators.required);
     this.notesInput = new FormControl('', [Validators.required, Validators.maxLength(150)]);
-    this.user = new FormControl({
-      id: this.userId
-    })
+    this.user = new FormControl({});
 
     this.registerForm = new FormGroup({
       name: this.nameInput,
@@ -87,6 +85,7 @@ export class EditCoffeeFormComponent implements OnInit{
           this.ingredientsInput = data.ingredients;
           this.instructionsInput = data.instructions;
           this.notesInput.setValue(data.notes);
+          this.user.setValue(data.createdBy);
         },
         error: (e) => {
           console.log(e);
@@ -96,13 +95,12 @@ export class EditCoffeeFormComponent implements OnInit{
   }
 
   onSubmit(): void {
-    //console.log("FORM DATA: ", this.registerForm.value);
+    console.log("FORM DATA: ", this.registerForm.value);
     if (this.registerForm.valid) {
       this.coffeeService.updateCoffee(this.id, this.registerForm.value).subscribe(
         {
           next: () => {
             this.coffeeUpdated = true;
-            this.registerForm.reset();
             setTimeout(() => {
               this.router.navigate(['/']);
             }, 1000);

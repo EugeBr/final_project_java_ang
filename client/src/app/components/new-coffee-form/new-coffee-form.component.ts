@@ -70,7 +70,6 @@ export class NewCoffeeFormComponent {
           next: (data) => {
             console.log(data);
             this.coffeeCreated = true;
-            this.registerForm.reset();
             setTimeout(() => {
               this.router.navigate(['/']);
             }, 1000);
